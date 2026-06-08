@@ -216,7 +216,7 @@ export class SearchAddon extends Disposable implements ITerminalAddon, ISearchAp
       return false;
     }
 
-    const result = this._resultTracker.searchResults.find((match: ISearchResult, index: number) => index + 1 === searchOptions?.n);
+    const result = this._resultTracker.searchResults[searchOptions?.n - 1];
     return this._selectResult(result, searchOptions?.decorations, internalSearchOptions?.noScroll);
   }
 
